@@ -19,10 +19,10 @@ function App(): ReactElement {
   return (
     <>
       <Grid container spacing={4} className={classes.root}>
-        <Grid item xs={12} sm={8} className={classes.leftContent}>
+        <Grid item xs={12} sm={7} md={8} className={classes.leftContent}>
           Left Content
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={5} md={4}>
           <Sidebar />
         </Grid>
       </Grid>

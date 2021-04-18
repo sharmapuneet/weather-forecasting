@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.background.paper,
     width: "100%",
     height: "auto",
-    paddingTop: theme.spacing()
+    marginTop: theme.spacing(),
+    [theme.breakpoints.only("xs")]: {
+      marginTop: `-${theme.spacing(1.25)}px`
+    }
   },
   sunIcon: {
     fontSize: "16px",
@@ -62,7 +65,7 @@ const TopContent = (): ReactElement => {
         </Typography>
       </Grid>
       <Grid item xs={5}>
-        <CloudOutlinedIcon className={classes.weatherIcon} />
+        <CloudOutlinedIcon className={classes.weatherIcon} data-testid="test-cloudIcon" />
       </Grid>
       <Grid item xs={12} className={classes.table}>
         <Table>
@@ -79,7 +82,10 @@ const TopContent = (): ReactElement => {
                     <Typography variant="body1" className={classes.whiteText}>
                       {item.description}
                       {index === tableData.length - 1 && (
-                        <WbSunnyOutlinedIcon className={classes.sunIcon} />
+                        <WbSunnyOutlinedIcon
+                          className={classes.sunIcon}
+                          data-testid="test-sunIcon"
+                        />
                       )}
                     </Typography>
                   </TableCell>

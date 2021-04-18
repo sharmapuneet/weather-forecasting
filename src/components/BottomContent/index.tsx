@@ -7,7 +7,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import { chartColors } from "./colors";
 import { RampsContext, Ramps } from "../../context/RampsContext";
 
@@ -107,7 +107,7 @@ const BottomContent = (): ReactElement => {
     <div className={classes.root}>
       <Accordion defaultExpanded className={classes.accordion}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon className={classes.fadedText} fontSize="large" />}
+          expandIcon={<ExpandLessIcon className={classes.fadedText} fontSize="large" />}
           classes={{ content: classes.accordionRoot }}>
           <Typography variant="h6" component="p" className={classes.fadedText}>
             RAMP CHART
