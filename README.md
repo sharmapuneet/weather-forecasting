@@ -1,6 +1,6 @@
-# Weather Forecasting
+# Sidebar
 
-Weather Forecasting consists of the the sidebar which shows the weather of the city, delayed routes and ramp chart.
+Sidebar shows the weather of the city, delayed routes and ramp chart.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
