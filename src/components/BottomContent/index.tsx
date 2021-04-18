@@ -72,7 +72,9 @@ const BottomContent = (): ReactElement => {
         render: "percentage",
         fontColor: "#38B4AA",
         precision: 0,
-        position: "outside"
+        position: "outside",
+        textMargin: 8,
+        fontSize: 14
       }
     },
     maintainAspectRatio: false,
