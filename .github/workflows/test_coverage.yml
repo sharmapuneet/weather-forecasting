@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test
-      uses: mattallty/jest-github-action@v1
+      uses: anuraag016/Jest-Coverage-Diff@master
       with:
-        github_token: "${{ secrets.GITHUB_TOKEN }}"
-        test-command: "npm test"
+        fullCoverageDiff: false // defaults to false, if made true whole coverage report is commented with the diff
+        runCommand: "npx jest --collectCoverageFrom='[\"src/**/*.{js,jsx,ts,tsx}\"]' --coverage --collectCoverage=true --coverageDirectory='./' --coverageReporters='json-summary' --forceExit --detectOpenHandles test/.*test.*"
+        delta: 0.5
