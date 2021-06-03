@@ -1,12 +1,13 @@
 name: Code Coverage Report
-on: push
+on: pull_request
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Test
-      uses: anuraag016/Jest-Coverage-Diff@master
-      with:
-        fullCoverageDiff: false
-        runCommand: "npm run test --collectCoverageFrom='[\"src/**/*.{ts,tsx}\"]' --coverage --collectCoverage=true --coverageDirectory='./coverage' --coverageReporters='json-summary'"
-        delta: 0.5
+      - name: Hello world action step
+        id: hello
+        uses: raulanatol/jest-coverage-comment-action@v1.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          jest-command: 'npm run jest-ci'
