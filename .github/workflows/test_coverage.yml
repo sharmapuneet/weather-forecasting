@@ -7,4 +7,5 @@ jobs:
     - name: Test
       uses: mattallty/jest-github-action@v1
       with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
         test-command: "npm test"
