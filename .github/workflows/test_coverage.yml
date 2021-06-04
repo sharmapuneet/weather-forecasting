@@ -1,10 +1,13 @@
-name: Code Coverage Report
-on: [push, pull_request]
+on: pull_request
+
 jobs:
-  build:
+  test-coverage:
     runs-on: ubuntu-latest
     steps:
-    - name: Test
-      uses: romeovs/lcov-reporter-action@v0.2.16
-      with:
-        lcov-file: ./coverage/lcov.info
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Comment with Test Coverage
+        uses: artiomtr/jest-coverage-report-action@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          test_script: npm run test --silent --ci --coverage --json --coverageReporters="text" --outputFile=\"report.json\"
