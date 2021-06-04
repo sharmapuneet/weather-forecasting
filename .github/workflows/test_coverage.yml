@@ -1,13 +1,16 @@
-name: Code Coverage Report
-on: pull_request
-
+name: 'coverage'
+on:
+    pull_request:
+        branches:
+            - master
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello world action step
-        id: hello
-        uses: raulanatol/jest-coverage-comment-action@v1.0.6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          jest-command: 'npm run jest-ci'
+    coverage:
+        runs-on: ubuntu-latest
+        env:
+            CI_JOB_NUMBER: 1
+        steps:
+            - uses: actions/checkout@v1
+            - uses: artiomtr/jest-coverage-report-action@v1.3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  test_script: npm run test:coverage
