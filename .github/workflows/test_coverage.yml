@@ -1,13 +1,17 @@
-name: 'coverage'
 on: pull_request
+
 jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        env:
-            CI_JOB_NUMBER: 1
-        steps:
-            - uses: actions/checkout@v1
-            - uses: ziishaned/jest-reporter-action@v0.0.1
-              with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                test-command: "npm run test --coverage"
+  test-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: npm i
+
+      - name: Comment with Test Coverage
+        uses: dkershner6/jest-coverage-commenter-action@v1
+        with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          test_command: "npm run test:coverage"
