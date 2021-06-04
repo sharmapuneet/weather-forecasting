@@ -7,6 +7,7 @@ jobs:
             CI_JOB_NUMBER: 1
         steps:
             - uses: actions/checkout@v1
-            - uses: artiomtr/jest-coverage-report-action@v1.3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+            - uses: ziishaned/jest-reporter-action@v0.0.1
+                with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  test-command: "npm run test --coverage"
