@@ -1,5 +1,5 @@
 name: 'coverage'
-on: [push, pull_request]
+on: pull_request
 jobs:
     coverage:
         runs-on: ubuntu-latest
@@ -10,4 +10,4 @@ jobs:
             - uses: artiomtr/jest-coverage-report-action@v1.3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  test_script: npm run test --coverage
+                  test_script: npm run test --coverage --json --outputFile=\"report.json\"
