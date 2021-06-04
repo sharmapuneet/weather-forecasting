@@ -6,10 +6,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - run: npm i
-
       - name: Comment with Test Coverage
         uses: artiomtr/jest-coverage-report-action@v1.3
         with:
