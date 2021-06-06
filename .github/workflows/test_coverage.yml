@@ -10,4 +10,4 @@ jobs:
         uses: artiomtr/jest-coverage-report-action@v1.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          test_script: npm run test --silent --ci --coverage --json --coverageReporters="text" --outputFile=\"report.json\"
+          test_script: npm run test -- --silent --ci --coverage --coverageReporters="text" --coverageReporters="text-summary"
