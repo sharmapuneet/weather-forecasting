@@ -7,7 +7,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Comment with Test Coverage
-        uses: artiomtr/jest-coverage-report-action@v1.3
+        uses: raulanatol/jest-coverage-comment-action@v1.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          test_script: npm run test --silent --ci --coverage --coverageReporters="text" --coverageReporters="text-summary"
+          jest-command: npm run test --coverage
