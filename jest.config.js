@@ -12,5 +12,6 @@ module.exports = {
       tsconfig: "tsconfig.jest.json"
     }
   },
-  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!/node_modules/*"]
+  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!/node_modules/*"],
+  collectCoverage: true
 };
