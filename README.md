@@ -79,4 +79,4 @@ This component is build to create a single row of the MiddleContent component.
 
 ### BottomComponent
 
-This component is the third section of sidebar. It includes the ramp chart which consumes data from the context and create a Doughnut chart using chartJs library.
+This component is the third section of sidebar. It includes the ramp chart which consumes data from the context and create a Doughnut chart using chartJs library
